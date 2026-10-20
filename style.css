@@ -12,3 +12,20 @@
 .countries{justify-content:center;margin-bottom:24px}
 .regions{border-top:1px solid var(--line);padding-top:22px;margin-bottom:22px}
 @media(max-width:600px){.countries{margin-bottom:20px}.regions{padding-top:18px}}
+
+/* V6: navegación horizontal y reducción de altura en teléfonos */
+@media (max-width:700px){
+.shell{padding-left:14px;padding-right:14px}
+.countries-header{margin:0 0 10px;align-items:center;gap:10px}
+.countries-header h2{font-size:clamp(27px,7vw,33px)}
+.countries-header span{flex-shrink:0;font-size:11px}
+.countries{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:8px;margin:0 -14px 13px;padding:3px 14px 10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.countries::-webkit-scrollbar,.regions::-webkit-scrollbar{display:none}
+.country{flex:0 0 auto;white-space:nowrap;padding:11px 14px;min-height:42px;scroll-snap-align:start;font-size:12px}
+.map-top{padding:12px 13px 4px}.map-kicker{font-size:8px}
+.map-top #reset{padding:8px 9px;font-size:9px!important}
+#map{min-height:0}.map-bottom{padding:10px 13px;gap:8px}
+.map-bottom small{font-size:8px;margin-bottom:3px}.map-bottom strong{font-size:25px}.legend{font-size:9px}
+.regions{display:flex;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:8px;margin:0;padding:13px 0 5px}
+.region{flex:0 0 auto;padding:10px 13px}.footnote{margin-top:13px}
+}

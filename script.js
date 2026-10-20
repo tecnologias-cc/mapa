@@ -73,6 +73,12 @@ function selectCountry(id){
  document.getElementById('callout-name').textContent=importers[id]||'';
  d3.select('#map-callout').classed('visible',!!importers[id]);
  showButtons();updatePaths();
+ const activeButton=document.querySelector('#countries .country.active');
+ if(activeButton && window.matchMedia('(max-width: 700px)').matches){
+   const strip=document.getElementById('countries');
+   const left=activeButton.offsetLeft-strip.offsetLeft-(strip.clientWidth-activeButton.offsetWidth)/2;
+   strip.scrollTo({left:Math.max(0,left),behavior:'smooth'});
+ }
  const f=features.find(d=>normalize(d.id)===id);
  if(f)animateTo(f,region);
 }
